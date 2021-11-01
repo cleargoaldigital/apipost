@@ -14,8 +14,13 @@ function getPosts(){
             <div class="card h-100">
                 <div class="card-body">
                     <h6 class="post-title mb-4 text-center text-info">${e.id}</h6>
-                    <h5 class="post-title mb-4">${e.title}</h5>
+                    <h5 class="post-title mb-4" id="">${e.title}</h5>
                     <p class="post-body">${e.body}</p>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <button class="btn btn-primary" onclick="deletePost( ${e.id} )">Delete</button>
+            
+                    <button class="btn btn-success" onclick="updatePost(e)">Update</button>
                 </div>
             </div>
             </div>`
@@ -59,7 +64,36 @@ postForm.addEventListener('submit', createPost)
     })
 }
 
+
+
+/* Delete function
+The function below is written to allow deleting the data. */
+
 function deletePost(postId) {
     console.log(postId)
+
+}
+/* Update function
+The function below is written to allow the updating of the data. */
+
+function updatePost() {
+    fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        method: 'PUT',
+        body: JSON.stringify({
+            id: 1,
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+    .then((response) => response.json())
+    .then((data) => { 
+        console.log(data)
+})
+.catch((e) => {
+})
 
 }
