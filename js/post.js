@@ -17,7 +17,7 @@ function getPosts(){
                     <h5 class="post-title mb-4" id="">${e.title}</h5>
                     <p class="post-body">${e.body}</p>
                 </div>
-                <div class="d-flex justify-content-between mb-2">
+                <div class="d-flex justify-content-around mb-2">
                     <button class="btn btn-primary" onclick="deletePost( ${e.id} )">Delete</button>
             
                     <button class="btn btn-success" onclick="updatePost(e)">Update</button>
