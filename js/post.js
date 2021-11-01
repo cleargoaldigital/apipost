@@ -54,7 +54,7 @@ postForm.addEventListener('submit', createPost)
         console.log(userPost)
         userPost.push(data);
         console.log(userPost)
-    alert('Congratulations! You have successfully created your posts.')
+    alert('Congratulations! You have successfully created your post.')
         
     })
 }
